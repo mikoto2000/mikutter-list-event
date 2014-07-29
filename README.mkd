@@ -1,0 +1,48 @@
+yukari
+======
+
+Usage:
+------
+
+このプラグインは、リスト関連のイベントを追加するためのプラグインです。
+
+このプラグインをインストールすると、下記イベントが発火するようになります。
+
+- on_list_update : リストツイートのフィルタリングなどしたい場合にお使いください。
+
+### イベント処理コード例
+
+~~~ { .rb }
+# on_list_update イベント処理サンプル
+# イベント発火をトリガに処理を行う
+on_list_update do |list, message|
+    if list.user === 'mikoto2000' && list[:name] === 'News' then
+        Open3.capture3("echo '#{message}' >> ~/tmp/test.txt")
+    end
+end
+~~~
+
+Install:
+--------
+
+以下のコマンドをターミナルで実行し、 mikutter を再起動してください。
+
+~~~ { .sh }
+$ mkdir -p ~/.mikutter/plugin
+$ cd ~/.mikutter/plugin
+$ git clone git://github.com/mikoto2000/mikutter-list-event.git list-event
+~~~
+
+License:
+--------
+
+Copyright (C) 2014 mikoto2000
+
+This software is released under the MIT License, see LICENSE
+
+このソフトウェアは MIT ライセンスの下で公開されています。 LICENSE を参照してください。
+
+Author:
+-------
+
+mikoto2000 <mikoto2000@gmail.com>

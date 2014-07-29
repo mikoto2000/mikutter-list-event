@@ -1,0 +1,9 @@
+---
+slug: :list-event
+depends:
+  mikutter: 3.0.3
+  plugin: []
+version: '1.0'
+author: 
+name: list-event
+description: リスト関連のイベントを追加する
